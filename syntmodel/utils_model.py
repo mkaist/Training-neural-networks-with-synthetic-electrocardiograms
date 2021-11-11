@@ -132,18 +132,10 @@ class Prms():
         
         self.__init__() 
         
-        def x(r1, r2, f):
-            
-            s = np.abs(r1 + r2)            
-            fr1, fr2 = np.abs(r1/s), np.abs(r2/s)
-            
-            d = np.abs( (r2 - r1)*(f-1))   
-            r1d, r2d = d*fr1, d*fr2            
-            
-            if f > 1:
-                return (r1 - r1d, r2 + r2d)  
-            else:
-                return (r1 + r1d, r2 - r2d)        
+        def x(r1, r2, c):
+            w = (r2-r1)/(r1+r2)*(c-1)
+            return (r1 - r1*w, r2 + r2*w)   
+      
         
         self.pa1, self.pa2 = x(self.pa1, self.pa2,scale_waveform)        
         self.qa1, self.qa2 = x(self.qa1, self.qa2,scale_waveform)        
