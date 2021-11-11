@@ -1,0 +1,27 @@
+verbose: False
+
+data:
+  source: generate_synt 
+  n_samples: 1
+  sample_time: 4
+ 
+syntdata:
+  fs: 250
+  
+preprocess:
+  resample_fs: 250
+  data_augmentation: True
+  filter: True
+ 
+train:
+  batch_size: 32
+  epochs: 30
+  steps: 20
+  savemodel: True
+
+parameters:
+  scale_waveform: 1
+  scale_fiducialpoint: 1
+  scale_rr: 1
+  scale_noise: 1
+
