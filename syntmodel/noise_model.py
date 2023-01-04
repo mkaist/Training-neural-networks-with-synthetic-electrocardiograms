@@ -15,7 +15,6 @@ def psd2time(n, prms, fs):
     time = np.arange(0,n)*dt    
     f2 = fs/2
     df = fs/n
-    freq = np.arange(df, f2 + df, df) 
     freq = np.linspace(df, f2, int(n/2))
     
     c = c*(alpha**2)
